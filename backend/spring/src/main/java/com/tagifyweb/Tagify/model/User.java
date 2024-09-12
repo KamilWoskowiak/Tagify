@@ -24,19 +24,21 @@ public class User implements UserDetails {
     private String email;
     @Column(nullable = false)
     private String password;
-    private boolean enabled;
+
     @Column(name = "verification_code")
     private String verificationCode;
     @Column(name = "verification_expiration")
     private LocalDateTime verificationCodeExpiresAt;
+    private boolean enabled;
 
+    //constructor for creating an unverified user
     public User(String username, String email, String password) {
         this.username = username;
         this.email = email;
         this.password = password;
     }
-
-    public User() {
+    //default constructor
+    public User(){
     }
 
     @Override
@@ -44,6 +46,7 @@ public class User implements UserDetails {
         return List.of();
     }
 
+    //TODO: add proper boolean checks
     @Override
     public boolean isAccountNonExpired() {
         return true;
