@@ -1,5 +1,5 @@
 currently working on:
--auth, signup/signin
+-embedding html for email send
 
 need to do:
 -compressing strings
